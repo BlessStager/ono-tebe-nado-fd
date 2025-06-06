@@ -106,7 +106,7 @@
 .lots {
   display: grid;
   gap: 29px;
-  margin-bottom: 153px;
+  margin-bottom: 155px;
 }
 
 .lots-heading {
@@ -147,6 +147,8 @@
   height: 100%;
   padding: 48px 40px;
   z-index: 0;
+  background-size: cover;
+  background-position: center;
 }
 
 .card-title {
@@ -169,20 +171,14 @@
 
 .card_type_film {
   background-image: url(../images/card-lot-01.jpg);
-  background-size: cover;
-  background-position: center;
 }
 
 .card_type_book {
   background-image: url(../images/card-lot-02.jpg);
-  background-size: cover;
-  background-position: center;
 }
 
 .card_type_picture {
   background-image: url(../images/card-lot-03.jpg);
-  background-size: cover;
-  background-position: center;
 }
 
 .lots-look-more-link {
@@ -198,15 +194,17 @@
 .about {
   display: grid;
   grid-template-columns: 334px 1fr;
-  grid-template-rows: 250px 1fr;
-  column-gap: 25px;
+  grid-template-rows: min-content auto;
+  grid-template-areas:
+  "about-logo about-title"
+  ". about-text";
+  gap: 8px 25px;
   padding-left: 24px;
   padding-right: 28px;
   margin-bottom: 180px;
 } 
 
 .about-logo {
-  grid-row: 1/3;
   width: 240px;
   height: 240px;
   background-color: black;
@@ -215,6 +213,7 @@
   justify-content: center;
   align-items: center;
   justify-self: center;
+  grid-area: about-logo;
 }
 
 .about-logo-image {
@@ -227,6 +226,7 @@
   font-size: 40px;
   color: black;
   align-self: center;
+  grid-area: about-title;
 }
 
 .about-text {
@@ -234,6 +234,7 @@
   row-gap: 24px;
   font-weight: normal;
   font-size: 20px;
+  grid-area: about-text;
 }
 
 .footer {
